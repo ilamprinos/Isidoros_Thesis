@@ -1,0 +1,23 @@
+{
+  "org": "$HZN_ORG_ID",
+  "label": "$SERVICE_NAME for $ARCH",
+  "url": "$SERVICE_NAME",
+  "version": "$SERVICE_VERSION",
+  "arch": "$ARCH",
+  "public": true,
+  "sharable": "singleton",
+  "requiredServices": [],
+  "userInput": [],
+  "deployment": {
+    "services": {
+      "$SERVICE_NAME": {
+        "image": "$SERVICE_CONTAINER",
+        "ports": [ 
+          { "HostIP": "0.0.0.0", "HostPort": "1883:1883/tcp" },
+          { "HostIP": "0.0.0.0", "HostPort": "8883:8883/tcp" }
+	]
+      }
+    }
+  }
+}
+

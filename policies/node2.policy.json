@@ -1,0 +1,17 @@
+{
+    "properties": [
+      {
+        "name": "edgeX",
+        "value": "true"
+      },
+      {
+        "name": "first_batch",
+        "value": "false"
+      },
+      {
+        "name": "second_batch",
+        "value": "true"
+      }
+    ],
+    "constraints": []
+  }

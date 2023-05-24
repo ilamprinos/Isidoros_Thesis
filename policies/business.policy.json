@@ -1,0 +1,24 @@
+{
+    "properties": [
+    ],
+
+    "constraints": [
+      "edgeX == \"true\"",
+      "first_batch == \"false\""
+    ],
+
+    "service":{
+      "org"            :"$HZN_ORG_ID",
+      "name"           :"$POLICY_NAME",
+      "arch"           :"$ARCH",
+      "serviceVersions": [ {"version": "1.0.0" , "properity": {} } ]
+    },
+
+    "userInput":[
+      {
+      "serviceOrgid": "$HZN_ORG_ID",
+      "serviceUrl"  : "$SERVICE_NAME"
+      }
+
+    ]
+}
