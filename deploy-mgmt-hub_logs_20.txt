@@ -1,0 +1,24 @@
+----------- Summary of what was done:
+  1. Started Horizon management hub services: agbot, exchange, postgres DB, CSS, mongo DB, vault
+  2. Created exchange resources: system org (IBM) admin user, user org (issy) and admin user, and agbot
+    Automatically generated these passwords/tokens:
+      EXCHANGE_ROOT_PW=UbIrwSUCWw5ISNYedLUbhwhXxh0syl
+      EXCHANGE_HUB_ADMIN_PW=XFKJJ0ZXkDqvjSE435f4qIb32rmgCM
+      EXCHANGE_SYSTEM_ADMIN_PW=wPt1eM3N0XRiSN9cdsAUKnVD4w52K3
+      AGBOT_TOKEN=wSEZu5pjKVBYa13X6x80KdvoqJM25F
+      EXCHANGE_USER_ADMIN_PW=MY9ma5MpcvZMWcadb9tJkJMia8ZGwa
+      HZN_DEVICE_TOKEN=yBaQWnZefaBcLe27Y7E4hELJRwJSWa
+    Important: save these generated passwords/tokens in a safe place. You will not be able to query them from Horizon.
+  3. Installed and configured the Horizon CLI (hzn)
+  4. Created a Horizon developer key pair
+  5. Created a vault instance: https://192.168.1.43:8200/ui/vault/auth?with=token
+    Automatically generated this key/token:
+      VAULT_UNSEAL_KEY=
+      VAULT_ROOT_TOKEN=
+    Important: save this generated key/token in a safe place. You will not be able to query them from Horizon.
+  6. Added the hzn auto-completion file to ~/.bashrc (but you need to source that again for it to take effect in this shell session)
+
+For what to do next, see: https://github.com/open-horizon/devops/blob/master/mgmt-hub/README.md#all-in-1-what-next
+Before running the commands in the What To Do Next section, copy/paste/run these commands in your terminal:
+ export HZN_ORG_ID=issy
+ export HZN_EXCHANGE_USER_AUTH=admin:MY9ma5MpcvZMWcadb9tJkJMia8ZGwa

@@ -1,0 +1,10 @@
+export HZN_LISTEN_IP=`ifconfig | egrep 'inet ' | sed 's/addr://' | awk '{ print $2 }' | egrep -v '^172.|^10.|^127.' | head -1`
+echo "export HZN_LISTEN_IP=${HZN_LISTEN_IP}" >> ~/.bashrc
+export HZN_ORG_ID=issy
+echo "export HZN_ORG_ID=issy" >> ~/.bashrc
+export HZN_EXCHANGE_URL=https://${HZN_LISTEN_IP}:3090/v1/
+echo "export HZN_EXCHANGE_URL=https://${HZN_LISTEN_IP}:3090/v1/" >> ~/.bashrc
+export HZN_FSS_CSSURL=https://${HZN_LISTEN_IP}:9443
+echo "export HZN_FSS_CSSURL=https://${HZN_LISTEN_IP}:9443" >> ~/.bashrc
+export HZN_TRANSPORT=https
+echo "export HZN_TRANSPORT=${HZN_TRANSPORT}" >> ~/.bashrc

@@ -1,0 +1,3 @@
+https://open-horizon.github.io/docs/mgmt-hub/docs/index.html
+First of all I install management-hub with the script ./deploy-mgmt-hub.sh (if for some reason it was already installed flag "-SP")
+After this script is done I should run the ./test-mgmt-hub.sh to test it all(15/2 everything OK)

@@ -1,0 +1,14 @@
+CONTAINER ID   IMAGE                                         COMMAND                  CREATED       STATUS        PORTS                                                                        NAMES
+a0a2ba3738dc   edgexfoundry/sys-mgmt-agent:2.3.0             "/sys-mgmt-agent -cp…"   4 weeks ago   Up 31 hours   127.0.0.1:58890->58890/tcp                                                   edgex-sys-mgmt-agent
+18281ce713ff   edgexfoundry/app-service-configurable:2.3.1   "/app-service-config…"   4 weeks ago   Up 31 hours   48095/tcp, 127.0.0.1:59701->59701/tcp                                        edgex-app-rules-engine
+afb84be08feb   edgexfoundry/device-virtual:2.3.0             "/device-virtual --c…"   4 weeks ago   Up 31 hours   127.0.0.1:59900->59900/tcp                                                   edgex-device-virtual
+9b6d2200859b   edgexfoundry/device-rest:2.3.0                "/device-rest --cp=c…"   4 weeks ago   Up 31 hours   127.0.0.1:59986->59986/tcp                                                   edgex-device-rest
+56d2e78f3985   edgexfoundry/core-data:2.3.0                  "/core-data -cp=cons…"   4 weeks ago   Up 31 hours   127.0.0.1:5563->5563/tcp, 127.0.0.1:59880->59880/tcp                         edgex-core-data
+ea6c03804f1f   edgexfoundry/core-command:2.3.0               "/core-command -cp=c…"   4 weeks ago   Up 31 hours   127.0.0.1:59882->59882/tcp                                                   edgex-core-command
+a738d4b4cf2a   edgexfoundry/core-metadata:2.3.0              "/core-metadata -cp=…"   4 weeks ago   Up 31 hours   127.0.0.1:59881->59881/tcp                                                   edgex-core-metadata
+68fb48f5db54   edgexfoundry/support-notifications:2.3.0      "/support-notificati…"   4 weeks ago   Up 31 hours   127.0.0.1:59860->59860/tcp                                                   edgex-support-notifications
+d2e83456ef85   lfedge/ekuiper:1.7.1-alpine                   "/usr/bin/docker-ent…"   4 weeks ago   Up 31 hours   9081/tcp, 20498/tcp, 127.0.0.1:59720->59720/tcp                              edgex-kuiper
+84ecfb728c07   edgexfoundry/support-scheduler:2.3.0          "/support-scheduler …"   4 weeks ago   Up 31 hours   127.0.0.1:59861->59861/tcp                                                   edgex-support-scheduler
+df483463bd21   consul:1.13.2                                 "docker-entrypoint.s…"   4 weeks ago   Up 31 hours   8300-8302/tcp, 8301-8302/udp, 8600/tcp, 8600/udp, 127.0.0.1:8500->8500/tcp   edgex-core-consul
+47a1ab207d1b   redis:7.0.5-alpine                            "docker-entrypoint.s…"   4 weeks ago   Up 31 hours   127.0.0.1:6379->6379/tcp                                                     edgex-redis
+f0456a68dc22   edgexfoundry/edgex-ui:2.3.0                   "./edgex-ui-server -…"   4 weeks ago   Up 31 hours   0.0.0.0:4000->4000/tcp, :::4000->4000/tcp                                    edgex-ui-go

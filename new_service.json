@@ -1,0 +1,79 @@
+{
+  "org": "$HZN_ORG_ID",
+  "label": "edgex",
+  "url": "edgex.open.horizon.integration",
+  "version": "1.0.1",
+  "arch": "amd64",
+  "public": true,
+  "sharable": "singleton",
+  "requiredServices": [],
+  "userInput": [],
+  "deployment": {
+
+    "services": {
+      "edgex-app-rules-engine": {
+        "binds":[
+          "db-data:/data/db"
+        ],
+        "environment": [
+          "CLIENTS_CORE_COMMAND_HOST = edgex-core-command",
+          "CLIENTS_CORE_DATA_HOST = edgex-core-data",
+          "CLIENTS_CORE_METADATA_HOST=edgex-core-metadata",
+          "CLIENTS_SUPPORT_NOTIFICATIONS_HOST=edgex-support-notifications",
+          "CLIENTS_SUPPORT_SCHEDULER_HOST=edgex-support-scheduler",
+          "DATABASES_PRIMARY_HOST=edgex-redis",
+          "EDGEX_PROFILE=rules-engine",
+          "EDGEX_SECURITY_SECRET_STORE=false",
+          "MESSAGEQUEUE_HOST=edgex-redis",
+          "REGISTRY_HOST=edgex-core-consul",
+          "SERVICE_HOST=edgex-app-rules-engine",
+          "TRIGGER_EDGEXMESSAGEBUS_PUBLISHHOST_HOST=edgex-redis",
+          "TRIGGER_EDGEXMESSAGEBUS_SUBSCRIBEHOST_HOST=edgex-redis"
+        ],
+        "image": "edgexfoundry/app-service-configurable:2.3.1",
+        "ports": [
+          {
+            "HostPort":"59701:59701/tcp",
+            "HostIP":"127.0.0.1"
+          }
+        ],
+        "network": "edgex-network",
+        "privileged" : true,
+        "user": "2002:2001"
+
+
+      },
+      "edgex-core-data":{
+        "binds":[
+          "db-data:/data/db"
+        ],
+        "environment": [
+          "CLIENTS_CORE_COMMAND_HOST=edgex-core-command",
+          "CLIENTS_CORE_DATA_HOST=edgex-core-data",
+          "CLIENTS_CORE_METADATA_HOST=edgex-core-metadata",
+          "CLIENTS_SUPPORT_NOTIFICATIONS_HOST=edgex-support-notifications",
+          "CLIENTS_SUPPORT_SCHEDULER_HOST=edgex-support-scheduler",
+          "DATABASES_PRIMARY_HOST=edgex-redis",
+          "EDGEX_SECURITY_SECRET_STORE=false",
+          "MESSAGEQUEUE_HOST=edgex-redis",
+          "REGISTRY_HOST=edgex-core-consul",
+          "SERVICE_HOST=edgex-core-data"
+        ],
+        "image": "edgexfoundry/core-data:2.3.0",
+        "ports": [
+          {
+            "HostPort":"5563:5563/tcp",
+            "HostIP":"127.0.0.1"
+          },
+          {
+            "HostPort":"59880:59880/tcp",
+            "HostIP":"127.0.0.1"
+          }
+        ],
+        "privileged" : true,
+        "user": "2002:2001"
+      }
+    }  
+  }
+}
+
